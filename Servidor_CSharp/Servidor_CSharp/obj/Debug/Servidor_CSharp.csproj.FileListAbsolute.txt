@@ -1,0 +1,6 @@
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\bin\Debug\Servidor_CSharp.exe.config
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\bin\Debug\Servidor_CSharp.exe
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\bin\Debug\Servidor_CSharp.pdb
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\obj\Debug\Servidor_CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\obj\Debug\Servidor_CSharp.exe
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Servidor_CSharp\Servidor_CSharp\obj\Debug\Servidor_CSharp.pdb
