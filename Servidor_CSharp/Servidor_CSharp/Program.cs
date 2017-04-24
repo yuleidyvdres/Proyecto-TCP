@@ -24,14 +24,14 @@ namespace Servidor_CSharp
              -SocketType.Stream: Este tipo de socket comunica con un compañero y necesita una conexión con un host remoto antes 
               de que la comunicación empiece.
              -ProtocolType.Tcp: Indica que el socket soporta el protocolo TCP*/
-            IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("192.168.1.104"), 1234); 
+            IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("192.168.1.101"), 1234); 
             /*Se asigna la dirección IP y el puerto para realizar la conexión por donde el servidor escuchará*/
 
             string texto;
             byte[] texto_env;
             byte[] texto_rec;
             byte[] dir_ip;
-            byte[] finish;
+            byte[] mssg;
 
             try
             {
@@ -61,22 +61,27 @@ namespace Servidor_CSharp
                 /*Muestra el nombre del host cliente, convirtiéndolo de bytes a string*/
 
                 Console.WriteLine();
-                Console.Write("Servidor dice al cliente: ");
-                texto = Console.ReadLine();
-                texto_env = Encoding.UTF8.GetBytes(texto);//Se covierte "texto" de string a bytes
-                servidor.Send(texto_env, 0, texto_env.Length, 0);//Envia texto al cliente
-                Console.WriteLine("\nEnviado exitosamente!");
-
-                finish = new byte[255];
-                int end = servidor.Receive(finish, 0, finish.Length, 0);//Recibe la señal del cliente para terminar la conexión
-                Array.Resize(ref finish, end);
-
-                if (String.Compare(Encoding.UTF8.GetString(finish), "over")==0)
+                while (true)
                 {
-                    socket.Close();//Cierra la conexión
-                    Console.WriteLine();
-                    Console.WriteLine("Conexion servidor cerrada");
+                    Console.Write("Servidor dice: ");
+                    texto = Console.ReadLine();
+                    texto_env = Encoding.UTF8.GetBytes(texto);//Se covierte "texto" de string a bytes
+                    servidor.Send(texto_env, 0, texto_env.Length, 0);//Envia texto al cliente
+
+                    mssg = new byte[255];
+                    int byt_mssg = servidor.Receive(mssg, 0, mssg.Length, 0);//Recibe mensaje del cliente
+                    Array.Resize(ref mssg, byt_mssg);
+                    Console.WriteLine("Cliente dice: " + Encoding.UTF8.GetString(mssg));//Muestro texto que envió el cliente
+
+                    if (String.Compare(Encoding.UTF8.GetString(mssg), "over") == 0)
+                    {
+                        socket.Close();//Cierra la conexión
+                        Console.WriteLine();
+                        Console.WriteLine("Conexion servidor cerrada");
+                        break;
+                    }
                 }
+                
             }
             catch (Exception error)
             {

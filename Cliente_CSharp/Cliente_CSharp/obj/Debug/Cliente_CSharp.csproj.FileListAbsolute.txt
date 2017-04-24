@@ -4,3 +4,9 @@ C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\
 C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.exe
 C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.pdb
 C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\bin\Debug\Cliente_CSharp.exe.config
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.exe
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.pdb
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\bin\Debug\Cliente_CSharp.exe
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\bin\Debug\Cliente_CSharp.pdb
+C:\Users\Yuleidy\Documents\6to Semestre\Comunicaciones I\I Parcial\Proyecto-TCP\Cliente_CSharp\Cliente_CSharp\obj\Debug\Cliente_CSharp.csprojResolveAssemblyReference.cache

@@ -18,12 +18,13 @@ namespace Cliente_CSharp
         public static void conexion() 
         {
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("192.168.1.104"), 1234);
+            IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("192.168.1.101"), 1234);
 
             byte[] texto_rec;
             byte[] texto_env;
             byte[] d_ip;
-            byte[] over;
+            byte[] mssg;
+            string texto;
 
             try
             {
@@ -46,19 +47,34 @@ namespace Cliente_CSharp
                 d_ip = Encoding.UTF8.GetBytes(nombre);
                 socket.Send(d_ip, 0, d_ip.Length, 0);//Envio nombre del local host al servidor
 
-                texto_rec = new byte[255];
-                int recibir = socket.Receive(texto_rec, 0, texto_rec.Length, 0);//Recibo el "texto" del servidor
-                Array.Resize(ref texto_rec, recibir);
-                Console.WriteLine();
-                Console.WriteLine("Servidor dice: " + Encoding.UTF8.GetString(texto_rec));//Muestro texto que envió el servidor
+                while (true)
+                {
+                    texto_rec = new byte[255];
+                    int recibir = socket.Receive(texto_rec, 0, texto_rec.Length, 0);//Recibo el "texto" del servidor
+                    Array.Resize(ref texto_rec, recibir);
+                    Console.WriteLine("Servidor dice: " + Encoding.UTF8.GetString(texto_rec));//Muestro texto que envió el servidor
 
-                string finish = "over";
+                    Console.Write("Cliente dice: ");
+                    texto = Console.ReadLine();
+                    mssg = Encoding.UTF8.GetBytes(texto);//Se covierte "texto" de string a bytes
+                    socket.Send(mssg, 0, mssg.Length, 0);//Envia texto al servidor
+                    //Console.WriteLine("\n");
+
+                    if (String.Compare(texto, "over") == 0)
+                    {
+                        socket.Close();//Cierra la conexión
+                        Console.WriteLine();
+                        Console.WriteLine("Conexion cliente cerrada");
+                        break;
+                    }
+                }
+                /*string finish = "over";
                 over = Encoding.UTF8.GetBytes(finish);
                 socket.Send(over, 0, over.Length, 0);//Envio fin de conexión
 
                 socket.Close();
                 Console.WriteLine();
-                Console.WriteLine("Conexion cliente cerrada");
+                Console.WriteLine("Conexion cliente cerrada");*/
             }
             catch (Exception error)
             {
